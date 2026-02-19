@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Daily Routine Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Smart Daily Routine Generator</h1>
+
+    <!-- DAY -->
+    <div class="form-group">
+        <label>Day</label>
+        <select id="day">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+        </select>
+    </div>
+
+    <!-- BASE INPUT -->
+    <div class="form-group">
+        <label>Wake-up Time</label>
+        <input type="time" id="wakeTime">
+    </div>
+
+    <div class="form-group">
+        <label>Sleep Time</label>
+        <input type="time" id="sleepTime">
+    </div>
+
+    <div class="form-group">
+        <label>Study Hours</label>
+        <input type="number" id="studyHours" min="1" max="12">
+    </div>
+
+    <div class="form-group">
+        <label>Break Duration (minutes)</label>
+        <input type="number" id="breakMinutes" min="5" max="60">
+    </div>
+
+    <!-- USER TASK -->
+    <h2>Add Custom Task</h2>
+    <input type="text" id="taskName" placeholder="Task name (Gym)">
+    <input type="time" id="taskTime">
+    <input type="number" id="taskDuration" placeholder="Duration (minutes)">
+    <button onclick="addTask()">Add Task</button>
+
+    <!-- ACTIONS -->
+    <button class="primary" onclick="generateRoutine()">Generate Routine</button>
+    <button onclick="saveRoutine()">Save</button>
+    <button class="danger" onclick="clearRoutine()">Clear</button>
+
+    <p class="error" id="errorMsg"></p>
+
+    <div id="output"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
